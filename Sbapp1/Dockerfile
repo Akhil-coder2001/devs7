@@ -1,13 +1,4 @@
-# Use a lightweight OpenJDK image
-FROM openjdk
-
-# Set working directory
+FROM openjdk:17-jdk-slim
 WORKDIR /app1
-
-# Copy the built JAR file into the container
-COPY target/*.jar app1.jar
-
-
-
-# Command to run the Spring Boot app
-CMD ["java", "-jar", "Dockerapp1.jar"]
+COPY target/Dockerapp1.jar Dockerapp1.jar
+ENTRYPOINT ["java", "-jar", "Dockerapp1.jar"]
