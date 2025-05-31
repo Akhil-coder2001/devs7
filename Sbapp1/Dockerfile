@@ -5,7 +5,8 @@ FROM openjdk
 WORKDIR /app1
 
 # Copy the built JAR file into the container
-COPY target/*.jar/app1.jar
+COPY target/*.jar app1.jar
+
 
 
 # Command to run the Spring Boot app
